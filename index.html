@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>追光 | 9班</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <!-- bootstrap -->
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" href="assets/img/logo-collapsed@2x.png">
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="brand">9Class</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="#">主页</a>
+        <a href="https://sbybb.ga/cn/about.html">关于</a>
+        <a onclick="alert('正在开发中...')">查看更多</a>
+        <a href="https://sbybb.ga/">9班导航</a>
+        <a onclick="alert('联系个屁')">和我们联系</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <video id="1mp4" class="video-slide active" src="https://9class9.oss-cn-hongkong.aliyuncs.com/video/70.mp4" autoplay
+      muted loop></video>
+    <video id="2mp4" class="video-slide" src="https://9class9.oss-cn-hongkong.aliyuncs.com/video/dream.mp4" autoplay
+      muted loop></video>
+    <video id="3mp4" class="video-slide" src="https://9class9.oss-cn-hongkong.aliyuncs.com/video/pull_together.mp4"
+      autoplay muted loop></video>
+    <video id="4mp4" class="video-slide" src="https://9class9.oss-cn-hongkong.aliyuncs.com/video/flydreams.mp4" autoplay
+      muted loop></video>
+    <video id="5mp4" class="video-slide" src="https://9class9.oss-cn-hongkong.aliyuncs.com/video/1%20(3).mp4" autoplay
+      muted loop></video>
+    <div class="content active">
+      <h1>写点啥呢<br><span>写点啥呢</span></h1>
+      <p>写点啥呢</p>
+      <a href="#">查看更多</a></br>
+      <a id="firstvideo" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-backdrop="static"
+        onclick="playvideo(this)" id="test" style="position: relative;top: 40px;" data-backdrop="boolean">播放视频</a>
+    </div>
+    <div class="content">
+      <h1>写点啥呢<br><span>写点啥呢</span></h1>
+      <p>写点啥呢</p>
+      <a href="#">查看更多</a></br>
+      <a id="secondvideo" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"
+        onclick="playvideo(this)" style="position: relative;top: 40px;">播放视频</a>
+    </div>
+    <div class="content">
+      <h1>写点啥呢<br><span>写点啥呢</span></h1>
+      <p>写点啥呢</p>
+      <a href="#">查看更多</a></br><a id="thirdvideo" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#myModal" onclick="playvideo(this)" style="position: relative;top: 40px;">播放视频</a>
+    </div>
+    <div class="content">
+      <h1>写点啥呢<br><span>写点啥呢</span></h1>
+      <p>写点啥呢</p>
+      <a href="#">查看更多</a></br><a id="fourthvideo" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#myModal" onclick="playvideo(this)" style="position: relative;top: 40px;">播放视频</a>
+    </div>
+    <div class="content">
+      <h1>写点啥呢<br><span>写点啥呢</span></h1>
+      <p>写点啥呢</p>
+      <a href="#">查看更多</a></br><a id="fifthvideo" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#myModal" onclick="playvideo(this)" style="position: relative;top: 40px;">播放视频</a>
+    </div>
+    <div class="media-icons">
+      <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a> -->
+    </div>
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+
+  </section>
+
+  <!-- 模态框 -->
+    <div class="modal" id="myModal" data-backdrop="static">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- 模态框头部 -->
+          <div class="modal-header">
+            <h4 class="modal-title">视频播放</h4>
+            <button onclick="stop_music()" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- 模态框内容 -->
+          <div class="modal-body">
+            <!-- 文案 -->
+            <span></span>
+            <!-- 视频 -->
+            <div>
+              <video src="" width="470" controls preload="auto" id="dialog_video"></video>
+
+            </div>
+
+
+
+          </div>
+
+          <!-- 模态框底部 -->
+          <div class="modal-footer">
+            <button onclick="stop_music()" type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  
+
+
+
+  <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function (manual) {
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+  </script>
+
+  <script>
+
+    function playvideo(obj) {
+      var id = obj.id;
+      let player = document.querySelector('#dialog_video')
+      // alert(id)
+      if (id == 'firstvideo') {
+        // alert("1")
+        player.src = "https://9class9.oss-cn-hongkong.aliyuncs.com/video/70.mp4"
+        // player.play(
+      } else if (id == "secondvideo") {
+        player.src = "https://9class9.oss-cn-hongkong.aliyuncs.com/video/dream.mp4"
+      } else if (id == "thirdvideo") {
+        player.src = "https://9class9.oss-cn-hongkong.aliyuncs.com/video/pull_together.mp4"
+      } else if (id == "fourthvideo") {
+        player.src = "https://9class9.oss-cn-hongkong.aliyuncs.com/video/flydreams.mp4"
+      }else if(id == "fifthvideo"){
+        player.src = "https://9class9.oss-cn-hongkong.aliyuncs.com/video/1%20(3).mp4"
+      };
+      // 请原谅我的屎山代码
+    };
+
+    function stop_music() {
+      var stopmusic = document.getElementById('dialog_video')
+      stopmusic.pause();
+    };
+  </script>
+</body>
+
+</html>
